@@ -25,11 +25,11 @@ h3,
 }
 h3 {
   color: white;
-  font-size: 18px;
+  font-size: 1.75rem;
   margin-bottom: 0.8rem;
 }
 #remain {
-  font-size: 22px;
+  font-size: 1.75rem;
   font-weight: bolder;
   border-bottom: 1px solid rgb(255, 255, 255);
   padding-bottom: 0.5px;
@@ -118,10 +118,10 @@ button {
     width: 100px;
   }
   h3 {
-    font-size: 13px;
+    font-size: 1.5rem;
   }
   #remain {
-    font-size: 17px;
+    font-size: 1.5rem;
   }
   #three_more,
   #board_toggle,
