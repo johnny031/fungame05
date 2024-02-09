@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="static/css/style.css" />
+    <title>fungame5</title>
+  </head>
+  <style>
+    body {
+      background-color: rgb(0, 0, 0);
+    }
+    #index_page h3 {
+      color: white;
+    }
+    #index_page button,
+    #index_page input[type="submit"] {
+      font-family: Microsoft JhengHei;
+      background-color: rgb(255, 255, 255);
+    }
+    #index_page input[type="text"],
+    #index_page #number {
+      background-color: rgb(194, 194, 194);
+    }
+    #index_page input[type="text"] {
+      margin: 10px 0 !important;
+    }
+    #main_page {
+      display: none;
+    }
+    @media only screen and (min-width: 600px) and (max-width: 1200px) {
+      #index_page button,
+      #index_page input[type="submit"] {
+        font-size: 19px;
+      }
+    }
+  </style>
+  <body>
+    <div id="index_page">
+      <div class="container-fluid" style="padding-top: 12px;">
+        <h3 style="font-family: Microsoft JhengHei;">遊戲人數：</h3>
+        <input autofocus type="number" id="number" />
+        <button id="number_button">確認</button>
+      </div>
+    </div>
+    <div id="main_page">
+      <div class="container-fluid">
+        <button id="board_toggle">記分板</button>
+        <button id="set_left">剩幾種</button>
+        <button id="three_more">抽三張</button>
+        <h3>剩 <span id="remain">69</span> 張牌</h3>
+      </div>
+      <div class="container-fluid board_div">
+        <table id="board">
+          <tr>
+            <th>玩家</th>
+            <th>分數</th>
+          </tr>
+        </table>
+      </div>
+      <div class="container-fluid" id="extra_cards"></div>
+      <div class="container-fluid" id="cards_div"></div>
+      <div class="container-fluid text-center" id="players_div"></div>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="static/js/index.js"></script>
+  <script src="static/js/main.js"></script>
+</html>
