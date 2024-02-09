@@ -32,7 +32,7 @@ function game_start() {
     $("#board").append(tr);
   }
   for (let i = 0; i < 81; i++) {
-    $("<img/>")[0].src = "/static/img/" + r[i] + ".png";
+    $("<img/>")[0].src = "static/img/" + r[i] + ".png";
   }
   $(document).ready(function () {
     $("#three_more").on("click", function () {
@@ -51,7 +51,7 @@ function game_start() {
         let div_card = document.createElement("div");
         div_card.className = "card";
         let img = document.createElement("img");
-        img.src = "/static/img/" + r[current_card + i] + ".png";
+        img.src = "static/img/" + r[current_card + i] + ".png";
         div_card.append(img);
         label.append(input);
         label.append(div_card);
@@ -96,7 +96,7 @@ function game_start() {
         let div_card = document.createElement("div");
         div_card.className = "card";
         let img = document.createElement("img");
-        img.src = "/static/img/" + r[i * 4 + j] + ".png";
+        img.src = "static/img/" + r[i * 4 + j] + ".png";
         div_card.append(img);
         label.append(input);
         label.append(div_card);
@@ -133,7 +133,7 @@ function game_start() {
       $("label input[type='checkbox']").prop("checked", false);
       if (!set_or_not(chosen_cards)) {
         for (let i = 0; i < chosen_cards.length; i++) {
-          $("img[src='/static/img/" + chosen_cards[i] + ".png']")
+          $("img[src='static/img/" + chosen_cards[i] + ".png']")
             .parent(".card")
             .effect("highlight", { color: "#ffa3a3" }, 1500)
             .dequeue()
@@ -183,7 +183,7 @@ function game_start() {
   function change_cards(chosen_cards) {
     if (current_card > 78) {
       for (let i = 0; i < 3; i++) {
-        $("img[src='/static/img/" + chosen_cards[i] + ".png']")
+        $("img[src='static/img/" + chosen_cards[i] + ".png']")
           .parent(".card")
           .effect("highlight", { color: "#fffda3" }, 800)
           .dequeue()
@@ -192,7 +192,7 @@ function game_start() {
       }
     } else {
       for (let i = 0; i < 3; i++) {
-        $("img[src='/static/img/" + chosen_cards[i] + ".png']")
+        $("img[src='static/img/" + chosen_cards[i] + ".png']")
           .parent(".card")
           .effect("highlight", { color: "#fffda3" }, 1000)
           .dequeue()
@@ -206,11 +206,11 @@ function game_start() {
       $("#remain").html(81 - current_card);
       setTimeout(() => {
         for (let i = 0; i < 3; i++) {
-          $("img[src='/static/img/" + chosen_cards[i] + ".png']").attr(
+          $("img[src='static/img/" + chosen_cards[i] + ".png']").attr(
             "src",
-            "/static/img/" + r[current_card + i - 3] + ".png"
+            "static/img/" + r[current_card + i - 3] + ".png"
           );
-          $("img[src='/static/img/" + r[current_card + i - 3] + ".png']")
+          $("img[src='static/img/" + r[current_card + i - 3] + ".png']")
             .parent(".card")
             .animate({ opacity: 1 }, 600)
             .effect("highlight", { color: "#fffda3" }, 900);
@@ -225,7 +225,7 @@ function game_start() {
       })
       .get();
     for (let i = 0; i < 3; i++) {
-      $("img[src='/static/img/" + chosen_cards[i] + ".png']")
+      $("img[src='static/img/" + chosen_cards[i] + ".png']")
         .parent(".card")
         .css("visibility", "hidden");
     }
@@ -240,15 +240,15 @@ function game_start() {
     });
     for (let i = 0; i < extra_cards.length; i++) {
       move(extra_cards[i], chosen_cards[i]);
-      $("img[src='/static/img/" + chosen_cards[i] + ".png']").attr(
+      $("img[src='static/img/" + chosen_cards[i] + ".png']").attr(
         "src",
-        "/static/img/" + extra_cards[i] + ".png"
+        "static/img/" + extra_cards[i] + ".png"
       );
       $("input[value='" + chosen_cards[i] + "']").attr("value", extra_cards[i]);
     }
     setTimeout(() => {
       for (let i = 0; i < extra_cards.length; i++) {
-        $("img[src='/static/img/" + extra_cards[i] + ".png']")
+        $("img[src='static/img/" + extra_cards[i] + ".png']")
           .parent(".card")
           .css("visibility", "visible");
       }
@@ -323,14 +323,14 @@ function game_start() {
   }
   function move(ori, des) {
     let rect1 = document
-      .querySelector("img[src='/static/img/" + ori + ".png']")
+      .querySelector("img[src='static/img/" + ori + ".png']")
       .closest(".card")
       .getBoundingClientRect();
     let rect2 = document
-      .querySelector("img[src='/static/img/" + des + ".png']")
+      .querySelector("img[src='static/img/" + des + ".png']")
       .closest(".card")
       .getBoundingClientRect();
-    $("img[src='/static/img/" + ori + ".png']")
+    $("img[src='static/img/" + ori + ".png']")
       .parent(".card")
       .css("z-index", 1)
       .animate(
